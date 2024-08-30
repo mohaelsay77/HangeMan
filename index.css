@@ -1,0 +1,272 @@
+*{
+    box-sizing: border-box;
+}
+.hangman-container{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+}
+.hangman-container.opac{
+    opacity: .2;
+}
+.hangman-info{
+    display: flex;
+    justify-content: space-between;
+}
+.hangman-info .hangeman-name{
+    flex: 1;
+}
+.hangman-info .hangeman-category{
+    flex: 1;
+    text-align: right;
+}
+.hangman-container .game-container{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+.game-container .draw-area{
+    flex: 1;
+    height: 100%;
+    background-color: #EEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-container .draw-area.wrong-1 .the-stand{
+    display: block;
+}
+.game-container .draw-area.wrong-2 .the-hang{
+    display: block;
+}
+.game-container .draw-area.wrong-3 .the-hange{
+    display: block;
+}
+.game-container .draw-area.wrong-4 .the-rope{
+    display: block;
+}
+.game-container .draw-area.wrong-5 .the-head{
+    display: block;
+}
+.game-container .draw-area.wrong-6 .the-body{
+    display: block;
+}
+.game-container .draw-area.wrong-7 .the-hands{
+    display: block;
+}
+.game-container .draw-area.wrong-8 .the-legs{
+    display: block;
+}
+.draw-area .the-draw{
+    width: 60px;
+    height: 180px;
+    border-bottom: 4px solid #222;
+    position: relative;
+    
+    
+}
+.draw-area .the-stand{
+    width: 4px;
+    height: 180px;
+    background-color: #222;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: none;
+}
+.draw-area .the-hang{
+    width: 40px;
+    height: 4px;
+    background-color: #222;
+    left: 50%;
+    top: -5px;
+    position: absolute;
+    display: none;
+
+}
+.draw-area .the-hange{
+    position: absolute;
+    width: 4px;
+    height: 35px;
+    background-color: #222;
+    left: 67px;
+    top: -5px;
+    display: none;
+
+}
+.draw-area .the-rope{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border:4px dashed #222;
+    left:45px;
+    top:30px ;
+    display: none;
+
+}
+.draw-area .the-head{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 4px solid #222;
+    left: 53px;
+    top: 38px;
+    display: none;
+
+}
+.draw-area .the-body{
+    position: absolute;
+    width: 4px;
+    height: 68px;
+    left: 65px;
+    background-color: #222;
+    top: 63px;
+    display: none;
+
+}
+.draw-area .the-hands{
+    position: relative;
+    display: none;
+
+}
+.draw-area .the-hands::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 66px;
+    background-color: #222;
+    top: 82px;
+    transform: rotate(-30deg);
+}
+.draw-area .the-hands::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 39px;
+    background-color: #222;
+    top: 82px;
+    transform: rotate(30deg);
+}
+.draw-area .the-legs{
+    position: relative;
+    display: none;
+
+}
+.draw-area .the-legs::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 39px;
+    background-color: #222;
+    top: 135px;
+    transform: rotate(-30deg);
+}
+.draw-area .the-legs::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    left: 64px;
+    background-color: #222;
+    top: 135px;
+    transform: rotate(30deg);
+}
+
+.game-container .letters-area{
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.letters-area .letter-span{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-color: #009688;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.letters-area .letter-span.clicked{
+    cursor: no-drop;
+    background-color: #222;
+    opacity: .2;
+}
+.guess-letters{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.guess-letters .guess-span{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    margin: 10px;
+    color: #1a68ce;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #EEE;
+    border-bottom: 1px solid #222;
+    text-align: center;
+}
+
+.end-game{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #EEE;
+    color: rgb(196, 27, 78);
+    width: 80%;
+    height: 400px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+.end-game span{
+    color: #1a68ce;
+    font-size: 80px;
+}
+
+.you-win{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #EEE;
+    color: rgb(15, 101, 182);
+    width: 80%;
+    height: 400px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+}
+.random-value{
+    font-size: 80px;
+    color: black;
+}
